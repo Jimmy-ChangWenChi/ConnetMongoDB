@@ -1,10 +1,11 @@
 const Header = require("./Header/Headers")
 
-function successHanlde(res,posts){
+function successHanlde(res,posts,message){
     res.writeHead(200,Headers);
     res.write(JSON.stringify({
         "status":"success",
-        posts
+        posts,
+        "message":message
     }))
 }
 
