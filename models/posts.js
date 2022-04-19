@@ -25,10 +25,10 @@ const schema = new mongoose.Schema(
     },
     {
         versionKey:false,
-        collection:posts
+        collection:"posts"
     }
 )
 
-const POST = mongoose.model("posts",schema);
+const POST = mongoose.model("posts",schema)
 
 module.exports = POST;
