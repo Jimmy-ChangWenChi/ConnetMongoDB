@@ -2,6 +2,8 @@ const error = require("../Handlers/errorHandle");
 const success = require("../Handlers/successHandle");
 const POST = require("../models/posts");
 const Header = require("../Header/Headers")
+const HTTPController = require("../controllers/http")
+
 
 const routes = async function (req, res){
     let body = "";
@@ -25,7 +27,7 @@ const routes = async function (req, res){
         // }))
         // res.end();
 
-        success(res, allPosts, "全部資料");
+        success({res, allPosts, "全部資料"});
     } else if (req.url == "/posts" && req.method == "POST") {
         req.on("end", async () => {
             try {
