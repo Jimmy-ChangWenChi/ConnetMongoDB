@@ -2,24 +2,26 @@ const http = require("http");
 const mongoose = require("mongoose");
 const POST = require("./models/posts");
 
-const dotenv = require("dotenv");
-dotenv.config({ path: "./config.env" });
+//const dotenv = require("dotenv");
+//dotenv.config({ path: "./config.env" });
 
 
 
 const error = require("./Handlers/errorHandle");
 const success = require("./Handlers/successHandle");
+require("./connections/index");
 
-//設定資料庫資料
-const DB = process.env.MONGODB.replace('<password>', process.env.PW);
-//連線資料庫
-mongoose.connect(DB)
-    .then(() => {
-        console.log("資料庫連線成功")
-    })
-    .catch((error) => {
-        console.log(error);
-    })
+// //設定資料庫資料
+// const DB = process.env.MONGODB.replace('<password>', process.env.PW);
+// //連線資料庫
+// mongoose.connect(DB)
+//     .then(() => {
+//         console.log("資料庫連線成功")
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//     })
+
 const requestListener = async function (req, res) {
     let body = "";
     req.on("data", chuck => {
