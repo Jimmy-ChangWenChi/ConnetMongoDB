@@ -105,7 +105,9 @@ const requestListener = async function (req, res) {
     }
 }
 
-//建立 server
-const server = http.createServer(requestListener);
+// //建立 server
+// const server = http.createServer(requestListener);
 
-server.listen(process.env.PORT || process.env.SERVERPORT);
+// server.listen(process.env.PORT || process.env.SERVERPORT);
+
+module.exports = requestListener;
