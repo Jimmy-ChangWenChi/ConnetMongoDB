@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = required("mongoose");
 
 const schema = new mongoose.Schema(
     {
@@ -12,6 +12,7 @@ const schema = new mongoose.Schema(
         },
         content:{
             type:String,
+            require:[true,"內容未填寫"]
         },
         createAt:{
             type:Date,
